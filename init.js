@@ -47,5 +47,4 @@ function initDb(){
     }
     db.push(row);
   }
-  console.log(db);
 }

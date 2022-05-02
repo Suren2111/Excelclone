@@ -53,7 +53,9 @@ formulaInput.addEventListener("blur",function(e){
   if(formula){
     let{rowid,colid}=getrowIdcolId(lastselectedcell);
     let cellobj=db[rowid][colid];
+    let cellvalue=formulafinder(formula);
     //update formula to DB from UI
+    lastselectedcell.textContent=cellvalue;
     cellobj.formula=formula;
   }
 })
