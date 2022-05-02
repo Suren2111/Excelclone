@@ -40,7 +40,8 @@ function initDb(){
       let name=String.fromCharCode(65+j)+(i+1)+"";
       let cellobj={
         name:name,
-        value:""
+        value:"",
+        formula:""
       }
       row.push(cellobj);
     }
