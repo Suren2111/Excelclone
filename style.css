@@ -79,3 +79,7 @@
 .row{
     display: flex;
 }
+#address{
+    text-align: center;
+    font-size: medium;
+}

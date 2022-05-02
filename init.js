@@ -22,7 +22,7 @@ cellscont+="<div class='cells'>"
   for(let i=0;i<100;i++){
       cellscont+='<div class="row">'
       for(let j=0;j<26 ;j++){
-          cellscont+='<div class="cell" contentEditable="true"></div>'
+          cellscont+=`<div class="cell"  colid="${j}" rowid="${i}" contentEditable="true"></div>`
       }
       cellscont+='</div>'
   }
@@ -30,3 +30,21 @@ cellscont+="<div class='cells'>"
   cellscontdiv.innerHTML=cellscont;
 }
 initcells();
+let db;
+initDb();
+function initDb(){
+  db=[];
+  for(let i=0;i<100;i++){
+    let row=[];
+    for(let j=0;j<26;j++){
+      let name=String.fromCharCode(65+j)+(i+1)+"";
+      let cellobj={
+        name:name,
+        value:""
+      }
+      row.push(cellobj);
+    }
+    db.push(row);
+  }
+  console.log(db);
+}
