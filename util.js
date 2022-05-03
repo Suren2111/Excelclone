@@ -49,3 +49,19 @@ function updatechildren(cellobj){
         updatechildren(child);
     }
 }
+function removeformula(cellobj){
+    for(let i=0;i<cellobj.parent.length;i++){
+        let cellparent=cellobj.parent[i];
+        let {rowid,colid}=getrowIdcolIdFromAddress(cellparent);
+        let parentname=db[rowid][colid];
+        //updating the paents with respect to children in cellobj(deleting)
+        let updatechildren=parentname.children.filter(function(child){
+            return child!=cellobj.name;
+        })
+        //Setting the children that are not in cellobj.name
+        parentname.children=updatechildren;
+
+    }
+    // remove the parents from cellobj as we are deleting the formula
+    cellobj.parent=[];
+}

@@ -48,6 +48,17 @@ for(let i=0;i<allcells.length;i++){
     
 
   })
+
+  allcells[i].addEventListener("keydown",function(e){
+      if(e.key=='Backspace'){
+        let {rowid,colid}=getrowIdcolIdFromElement(e.target);
+        let cellobj=db[rowid][colid];
+        cellobj.formula="";
+        e.target.textContent="";
+        formulaInput.value='';
+        removeformula(cellobj);
+      }
+  })
 }
 
 formulaInput.addEventListener("blur",function(e){

@@ -42,7 +42,8 @@ function initDb(){
         name:name,
         value:"",
         formula:"",
-        children:[]
+        children:[],
+        parent:[]
       }
       row.push(cellobj);
     }
