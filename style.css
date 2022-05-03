@@ -121,3 +121,29 @@
 .font-style div{
     cursor: pointer;
 }
+.font-style div:hover{
+    background: darkgray;
+    opacity: .5;
+}
+.font-style-active{
+    background: darkgray;
+    opacity: .5;
+}
+.align-items{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 150px;
+}
+.menu-cont{
+    display: flex;
+}
+.align-items div{
+    cursor: pointer;
+}
+.align-items div:hover{
+   background: darkgray;
+   opacity: .5;
+}
+

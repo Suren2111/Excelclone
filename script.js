@@ -27,6 +27,17 @@ for(let i=0;i<allcells.length;i++){
      address.value=addresscont;
      //update formula to Ui frrom Db
      formulaInput.value=cellobj.formula;
+     cellobj.fontsyle.bold?
+     document.querySelector(".bold").classList.add("font-style-active"):
+     document.querySelector(".bold").classList.remove("font-style-active")
+
+     cellobj.fontsyle.italic?
+     document.querySelector(".italic").classList.add("font-style-active"):
+     document.querySelector(".italic").classList.remove("font-style-active")
+
+     cellobj.fontsyle.underline?
+     document.querySelector(".underline").classList.add("font-style-active"):
+     document.querySelector(".underline").classList.remove("font-style-active")
      
   })
 

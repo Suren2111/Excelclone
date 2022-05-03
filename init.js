@@ -46,7 +46,8 @@ function initDb(){
         formula:"",
         children:[],
         parent:[],
-        visited:false
+        visited:false,
+        fontstyle:{bold:false,italic:false,underline:false}
       }
       row.push(cellobj);
     }
