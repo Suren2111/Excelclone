@@ -27,6 +27,7 @@ for(let i=0;i<allcells.length;i++){
      address.value=addresscont;
      //update formula to Ui frrom Db
      formulaInput.value=cellobj.formula;
+     
   })
 
   //update Db with respect to UI,blur is the listner it will work when the focus is on the other cell
@@ -41,6 +42,7 @@ for(let i=0;i<allcells.length;i++){
     }
     cellobj.value=cellvalue;
     cellobj.formula=formulaInput.value;
+    updatechildren(cellobj);
    // console.log(cellvalue);
 
     
@@ -51,9 +53,9 @@ for(let i=0;i<allcells.length;i++){
 formulaInput.addEventListener("blur",function(e){
   let formula=e.target.value;
   if(formula){
-    let{rowid,colid}=getrowIdcolId(lastselectedcell);
+    let{rowid,colid}=getrowIdcolIdFromElement(lastselectedcell);
     let cellobj=db[rowid][colid];
-    let cellvalue=formulafinder(formula);
+    let cellvalue=formulafinder(formula,cellobj);
     //update formula to DB from UI
     lastselectedcell.textContent=cellvalue;
     cellobj.formula=formula;

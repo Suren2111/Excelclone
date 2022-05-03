@@ -41,7 +41,8 @@ function initDb(){
       let cellobj={
         name:name,
         value:"",
-        formula:""
+        formula:"",
+        children:[]
       }
       row.push(cellobj);
     }
