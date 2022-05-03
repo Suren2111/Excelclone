@@ -59,5 +59,7 @@ formulaInput.addEventListener("blur",function(e){
     //update formula to DB from UI
     lastselectedcell.textContent=cellvalue;
     cellobj.formula=formula;
+    cellobj.value=cellvalue;
+    updatechildren(cellobj);
   }
 })
