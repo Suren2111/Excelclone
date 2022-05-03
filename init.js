@@ -31,9 +31,11 @@ cellscont+="<div class='cells'>"
 }
 initcells();
 let db;
+let sheetsdb=[];
+let visitedcell;
 initDb();
 function initDb(){
-  db=[];
+  let newsheet=[];
   for(let i=0;i<100;i++){
     let row=[];
     for(let j=0;j<26;j++){
@@ -43,10 +45,15 @@ function initDb(){
         value:"",
         formula:"",
         children:[],
-        parent:[]
+        parent:[],
+        visited:false
       }
       row.push(cellobj);
     }
-    db.push(row);
+    newsheet.push(row);
   }
+  db=newsheet;
+  visitedcell=[];
+  sheetsdb.push({db:newsheet,visitedcell:visitedcell})
 }
+

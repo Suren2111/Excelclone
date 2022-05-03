@@ -9,7 +9,7 @@
     box-sizing: border-box;
 }
 .cells-cont{
-   height: calc(100vh - 80px);
+   height: calc(100vh - 90px);
    background-color: lightgray;
    position: relative;
    overflow:scroll;
@@ -20,7 +20,7 @@
    
 }
 .sheets-cont{
-    height: 20px;
+    height: 30px;
     border: 0.5px solid;
     display: flex;
     background-color: lightgray;

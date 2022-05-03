@@ -45,6 +45,11 @@ for(let i=0;i<allcells.length;i++){
     //To update the children if we change the parent's value
     updatechildren(cellobj);
    // console.log(cellvalue);
+   if(cellobj.visited){
+     return;
+   }
+   cellobj.visited=true;
+   visitedcell.push({rowid:rowid,colid:colid})
 
     
 
