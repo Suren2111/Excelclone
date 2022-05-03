@@ -37,11 +37,12 @@ for(let i=0;i<allcells.length;i++){
     let rowid=e.target.getAttribute('rowid');
     let colid=e.target.getAttribute('colid');
     let cellobj=db[rowid][colid];
-    if(cellobj==cellvalue){
+    if(cellobj.value==cellvalue){
       return;
     }
     cellobj.value=cellvalue;
     cellobj.formula=formulaInput.value;
+    //To update the children if we change the parent's value
     updatechildren(cellobj);
    // console.log(cellvalue);
 
@@ -56,6 +57,7 @@ for(let i=0;i<allcells.length;i++){
         cellobj.formula="";
         e.target.textContent="";
         formulaInput.value='';
+        //It will remove the children from the parents and delete the parents in the specific cell
         removeformula(cellobj);
       }
   })
@@ -66,11 +68,19 @@ formulaInput.addEventListener("blur",function(e){
   if(formula){
     let{rowid,colid}=getrowIdcolIdFromElement(lastselectedcell);
     let cellobj=db[rowid][colid];
+   //Intially checking that the cellobj contains formula previosly or not
+   //If it contains previosly we r updating it with nwew one so we are first deleting the parent and child 
+   //of the specifc cell object
+    if(cellobj.formula){
+      removeformula(cellobj);
+    }
+    //Formual finder will add child and parent and find the value corress to the formual that we r givig
     let cellvalue=formulafinder(formula,cellobj);
     //update formula to DB from UI
     lastselectedcell.textContent=cellvalue;
     cellobj.formula=formula;
     cellobj.value=cellvalue;
+    //if formula is updated then coresponding chidren values also need to updated
     updatechildren(cellobj);
   }
 })
