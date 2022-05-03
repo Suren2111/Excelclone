@@ -17,13 +17,16 @@ function formulafinder(formula,childcell){
         let value=cellobj.value;
         if(childcell){
             cellobj.children.push(childcell.name);
+            childcell.parent.push(cellobj.name);
             //console.log(cellobj);
         }
         //replace function 
         formula=formula.replace(formulacomp,value);
         }
+        
     }
     //similar to infix evaluation
+    console.log(childcell);
     return eval(formula);
 
 }
