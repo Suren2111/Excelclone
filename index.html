@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excel Clone</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 </head>
@@ -19,7 +20,18 @@
         <input type="text" id="formula">
     </div>
     <div class="cells-cont">cells-cont</div>
-    <div class="sheets-cont">sheets-cont</div>
+    <div class="sheets-cont">
+        <div class="add-sheets">
+            <i class="fa fa-plus"></i>
+        </div>
+        <div class="sheets-list">
+            <div class="sheet active-sheet">Sheet1</div>
+            <div class="sheet">Sheet2</div>
+            <div class="sheet">Sheet3</div>
+            <div class="sheet">Sheet4</div>
+            <div class="sheet">Sheet5</div>
+        </div>
+    </div>
    <script src="./init.js"></script>
    <script src="./util.js"></script>
    <script src="./script.js"></script>

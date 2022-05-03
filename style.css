@@ -22,6 +22,8 @@
 .sheets-cont{
     height: 20px;
     border: 0.5px solid;
+    display: flex;
+    background-color: lightgray;
   
 }
 .top-left-cell{                                   
@@ -82,4 +84,29 @@
 #address{
     text-align: center;
     font-size: medium;
+}
+.sheets-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sheet{
+    height: 100%;
+    font-size: 1rem;
+    width: 75px;
+    border: 0.5px solid black;
+    cursor: pointer;
+}
+.add-sheets{
+    height: 100%;
+    width: 50px;
+    border: 0.5px solid black;
+    color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.active-sheet{
+    background-color: white;
+    font-weight: bold;
 }
