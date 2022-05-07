@@ -47,7 +47,8 @@ function initDb(){
         children:[],
         parent:[],
         visited:false,
-        fontstyle:{bold:false,italic:false,underline:false}
+        fontstyle:{bold:false,italic:false,underline:false},
+        alignstyle:{left:false,center:false,right:false}
       }
       row.push(cellobj);
     }

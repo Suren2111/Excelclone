@@ -27,22 +27,39 @@ for(let i=0;i<allcells.length;i++){
      address.value=addresscont;
      //update formula to Ui frrom Db
      formulaInput.value=cellobj.formula;
-     cellobj.fontsyle.bold?
+    
+     cellobj.fontstyle.bold?
      document.querySelector(".bold").classList.add("font-style-active"):
-     document.querySelector(".bold").classList.remove("font-style-active")
+     document.querySelector(".bold").classList.remove("font-style-active");
 
-     cellobj.fontsyle.italic?
+     
+     cellobj.fontstyle.italic?
      document.querySelector(".italic").classList.add("font-style-active"):
-     document.querySelector(".italic").classList.remove("font-style-active")
+     document.querySelector(".italic").classList.remove("font-style-active");
 
-     cellobj.fontsyle.underline?
+     
+     cellobj.fontstyle.underline?
      document.querySelector(".underline").classList.add("font-style-active"):
-     document.querySelector(".underline").classList.remove("font-style-active")
+     document.querySelector(".underline").classList.remove("font-style-active");
+
+     cellobj.alignstyle.left?
+     document.querySelector(".left").classList.add("font-style-active"):
+     document.querySelector(".left").classList.remove("font-style-active");
+
+     cellobj.alignstyle.right?
+     document.querySelector(".right").classList.add("font-style-active"):
+     document.querySelector(".right").classList.remove("font-style-active");
+
+     cellobj.alignstyle.center?
+     document.querySelector(".center").classList.add("font-style-active"):
+     document.querySelector(".center").classList.remove("font-style-active");
+     
      
   })
 
   //update Db with respect to UI,blur is the listner it will work when the focus is on the other cell
   allcells[i].addEventListener("blur",function(e){
+
     lastselectedcell=e.target;
     let cellvalue=e.target.textContent;
     let rowid=e.target.getAttribute('rowid');

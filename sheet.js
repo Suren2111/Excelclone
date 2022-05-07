@@ -34,6 +34,12 @@ sheetlist.addEventListener("click",function(e){
 })
 
 function initUI(){
+    document.querySelector(".bold").classList.remove("font-style-active");
+    document.querySelector(".italic").classList.remove("font-style-active");
+    document.querySelector(".underline").classList.remove("font-style-active");
+    document.querySelector(".left").classList.remove("font-style-active");
+    document.querySelector(".right").classList.remove("font-style-active");
+    document.querySelector(".center").classList.remove("font-style-active");
     for(let i=0;i<100;i++){
         for(let j=0;j<26;j++){
             let cell=document.querySelector(`div[rowid="${i}"][colid="${j}"]`);
