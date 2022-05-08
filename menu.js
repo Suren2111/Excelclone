@@ -105,13 +105,14 @@ function setAlignUI(stylename, element) {
         cellobj.alignstyle[stylename] = !cellobj.alignstyle[stylename]
     }
 }
-
+//Font-family
 style.addEventListener("change", function () {
     let op = style.value;
     if (lastselectedcell) {
        lastselectedcell.style.fontFamily = op;
     }
 })
+//Font-size
 size.addEventListener("change",function(){
     let sz=size.value;
     if(lastselectedcell){
